@@ -2,76 +2,35 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+  subject { page }
+
   describe "Home page" do
+    before { visit root_path }
 
-    it "should have the content 'Home'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Home')
-    end
-
-    it "should have the title 'Home'" do
-      visit '/static_pages/home'
-      expect(page).to have_title("Write Your Book")
-    end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_title('| Home')
-    end
+    it { should have_content('Home') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
   end
 
   describe "Help page" do
+    before { visit help_path }
 
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
-
-    it "should have the title 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_title("Write Your Book")
-    end
-
-    it "should not have a custom page help" do
-      visit '/static_pages/help'
-      expect(page).not_to have_title('| Help')
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
   describe "About page" do
+    before { visit about_path }
 
-    it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the title 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_title("Write Your Book")
-    end
-
-    it "should not have a custom page about" do
-      visit '/static_pages/about'
-      expect(page).not_to have_title('| About Us')
-    end
+    it { should have_content('About') }
+    it { should have_title(full_title('About Us')) }
   end
 
   describe "Contact page" do
+    before { visit contact_path }
 
-    it "should have the content 'Contact Me'" do
-      visit '/static_pages/contact'
-      expect(page).to have_content('Contact Me')
-    end
-
-    it "should have the title 'Contact Me'" do
-      visit '/static_pages/contact'
-      expect(page).to have_title("Write Your Book")
-    end
-
-    it "should not have a custom page contact" do
-      visit '/static_pages/contact'
-      expect(page).not_to have_title('| Contact Me')
-    end
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
 end
 
