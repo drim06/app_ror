@@ -11,7 +11,12 @@ describe "Static pages" do
 
     it "should have the title 'Home'" do
       visit '/static_pages/home'
-      expect(page).to have_title("Write Your Book | Home")
+      expect(page).to have_title("Write Your Book")
+    end
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title('| Home')
     end
   end
 
@@ -24,7 +29,12 @@ describe "Static pages" do
 
     it "should have the title 'Help'" do
       visit '/static_pages/help'
-      expect(page).to have_title("Write Your Book | Help")
+      expect(page).to have_title("Write Your Book")
+    end
+
+    it "should not have a custom page help" do
+      visit '/static_pages/help'
+      expect(page).not_to have_title('| Help')
     end
   end
 
@@ -37,7 +47,12 @@ describe "Static pages" do
 
     it "should have the title 'About Us'" do
       visit '/static_pages/about'
-      expect(page).to have_title("Write Your Book | About Us")
+      expect(page).to have_title("Write Your Book")
+    end
+
+    it "should not have a custom page about" do
+      visit '/static_pages/about'
+      expect(page).not_to have_title('| About Us')
     end
   end
 
@@ -50,7 +65,12 @@ describe "Static pages" do
 
     it "should have the title 'Contact Me'" do
       visit '/static_pages/contact'
-      expect(page).to have_title("Write Your Book | Contact Me")
+      expect(page).to have_title("Write Your Book")
+    end
+
+    it "should not have a custom page contact" do
+      visit '/static_pages/contact'
+      expect(page).not_to have_title('| Contact Me')
     end
   end
 end
