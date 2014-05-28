@@ -1,4 +1,5 @@
 ProjetRor::Application.routes.draw do
+  get "characters/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
