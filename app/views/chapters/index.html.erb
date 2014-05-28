@@ -4,10 +4,16 @@
 <ul class="chapters">
   <% @chapter.each do |chapter| %>
     <li>
-      <%= link_to chapter.number, chapter %>,
-      <%=chapter.title%>, 
-      <%=chapter.scene%>,
-      <%=chapter.anecdote%>,
+      <strong> Chapter <%= link_to chapter.number, chapter %></strong>
+    </li>
+    <li>
+      Title : <%=chapter.title%>
+    </li>    
+    <li>  
+     Scene : <%=chapter.scene%>
+    </li>
+    <li>   
+    Anecdote : <%=chapter.anecdote%>,
     </li>
   <% end %>
 </ul>
