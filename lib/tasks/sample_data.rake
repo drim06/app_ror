@@ -22,5 +22,11 @@ namespace :db do
       Character.create!(name: name,
                    age: age)
     end
+
+    users = User.all(limit: 6)
+    50.times do
+      content = Faker::Lorem.sentence(5)
+      users.each { |user| user.anecdotes.create!(content: content) }
+    end
   end
 end

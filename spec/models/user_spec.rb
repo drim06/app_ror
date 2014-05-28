@@ -114,4 +114,27 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+
+  describe "anecdote associations" do
+
+    before { @user.save }
+    let!(:older_anecdote) do
+      FactoryGirl.create(:anecdote, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_anecdote) do
+      FactoryGirl.create(:anecdote, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right anecdotes in the right order" do
+      expect(@user.anecdotes.to_a).to eq [newer_anecdote, older_anecdote	]
+    end
+    it "should destroy associated anecdotes" do
+      anecdotes = @user.anecdotes.to_a
+      @user.destroy
+      expect(anecdotes).not_to be_empty
+      anecdotes.each do |anecdote|
+        expect(Anecdote.where(id: anecdotes.id)).to be_empty
+      end
+    end
+  end
 end

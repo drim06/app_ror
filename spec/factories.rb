@@ -14,4 +14,9 @@ FactoryGirl.define do
     name  "Michael Hartl"
     age   22
   end
+
+  factory :anecdote do
+    content "Lorem ipsum"
+    user
+  end
 end
