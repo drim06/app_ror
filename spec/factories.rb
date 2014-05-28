@@ -9,4 +9,9 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :character do
+    name  "Michael Hartl"
+    age   22
+  end
 end
