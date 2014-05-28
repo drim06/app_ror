@@ -19,4 +19,9 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :scene do
+    content "Lorem ipsum"
+    user
+  end
 end
