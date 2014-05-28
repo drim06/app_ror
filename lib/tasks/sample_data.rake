@@ -15,5 +15,12 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+
+    30.times do |n|
+      name  = Faker::Name.name
+      age  = rand(1..100)
+      Character.create!(name: name,
+                   age: age)
+    end
   end
 end
