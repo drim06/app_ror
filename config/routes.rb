@@ -1,5 +1,6 @@
 ProjetRor::Application.routes.draw do
   resources :users
+  resources :chapters
   resources :characters
   resources :scenes, only: [:create, :destroy]
   resources :anecdotes, only: [:create, :destroy]
@@ -14,6 +15,7 @@ ProjetRor::Application.routes.draw do
   match '/newCharacter',  to: 'characters#new',       via: 'get'
   match '/newAnecdote',   to: 'anecdotes#new',        via: 'get'
   match '/newScene',      to: 'scenes#new',           via: 'get'
+  match '/newChapter',    to: 'chapters#new',         via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

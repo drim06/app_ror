@@ -1,0 +1,23 @@
+<% provide(:title, 'New Chapter') %>
+<h1>New Chapter</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for Chapter.new do |f| %>
+  
+      <%= f.label :number %>
+      <%= f.text_field :number %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :scene %>
+      <%= f.text_field :scene %>
+
+      <%= f.label :anecdote %>
+      <%= f.text_field :anecdote %>
+
+      <%= f.submit "Create chapter", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
