@@ -1,13 +1,6 @@
 <% if signed_in? %>
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/anecdote_form' %>
-      </section>
-    </aside>
+  <div class="center hero-unit">
+    <h1>My Book</h1>
     <ul class="myButtons">
       <li>
         <%= link_to "New Character", newCharacter_path, class: "btn btn-large btn-primary" %>
