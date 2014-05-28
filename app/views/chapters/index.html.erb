@@ -1,0 +1,13 @@
+<% provide(:title, 'All chapters') %>
+<h1>All chapters</h1>
+
+<ul class="chapters">
+  <% @chapter.each do |chapter| %>
+    <li>
+      <%= link_to chapter.number, chapter %>,
+      <%=chapter.title%>, 
+      <%=chapter.scene%>,
+      <%=chapter.anecdote%>,
+    </li>
+  <% end %>
+</ul>
