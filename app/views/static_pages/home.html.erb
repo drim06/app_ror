@@ -1,11 +1,13 @@
-<div class="center hero-unit">
-  <h1>Write Your Book</h1>
-
-  <h2>
-    Simple and Powerful
-  </h2>
-
-  <% if signed_in? %>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/anecdote_form' %>
+      </section>
+    </aside>
     <ul class="myButtons">
       <li>
         <%= link_to "New Character", newCharacter_path, class: "btn btn-large btn-primary" %>
@@ -16,7 +18,13 @@
       <li>    
       </li>
     </ul>
-  <% else %>
+  </div>
+<% else %>
+<div class="center hero-unit">
+  <h1>Write Your Book</h1>
+  <h2>
+    Simple and Powerful
+  </h2>
     <ul class="myButtons">
       <li>
         <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
@@ -25,6 +33,6 @@
         <%= link_to "Sign in", signin_path, class: "btn btn-large btn-default" %>
       </li>
     </ul>
-  <% end %>
 
 </div>
+<% end %>
