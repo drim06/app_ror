@@ -7,6 +7,10 @@ class CharactersController < ApplicationController
     @character = Character.new
   end
 
+  def index
+    @character = Character.all
+  end
+
   def create
     @character = Character.new(character_params)
     if @character.save

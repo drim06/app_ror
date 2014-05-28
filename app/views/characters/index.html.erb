@@ -1,0 +1,11 @@
+<% provide(:title, 'All characters') %>
+<h1>All characters</h1>
+
+<ul class="characters">
+  <% @character.each do |character| %>
+    <li>
+      <%= link_to character.name, character %>,
+      <%= link_to character.age, character %> ans.
+    </li>
+  <% end %>
+</ul>
