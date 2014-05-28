@@ -28,5 +28,10 @@ namespace :db do
       content = Faker::Lorem.sentence(5)
       users.each { |user| user.anecdotes.create!(content: content) }
     end
+
+    30.times do
+      content = Faker::Lorem.sentence(5)
+      users.each { |user| user.scenes.create!(content: content) }
+    end
   end
 end

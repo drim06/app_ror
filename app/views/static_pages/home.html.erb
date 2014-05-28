@@ -2,6 +2,10 @@
   <div class="center hero-unit">
     <h1>My Book</h1>
     <ul class="myButtons">
+      <li>   
+        <%= link_to "New Chapter", '#', class: "btn btn-large btn-primary" %>
+        <%= link_to "All Chapter", '#', class: "btn btn-large btn-default" %>   
+      </li>
       <li>
         <%= link_to "New Character", newCharacter_path, class: "btn btn-large btn-primary" %>
         <%= link_to "All Characters", characters_path, class: "btn btn-large btn-default" %>
