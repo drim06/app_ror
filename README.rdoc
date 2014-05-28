@@ -1,28 +1,42 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-------------------------------------
+- README - Comment tester le projet -
+-------------------------------------
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+On créé un dossier dans lequel mettre le projet :
+$ mkdir rails_project
+$ cd rails_project
+
+
+On récupere le projet :
+$ git clone git@github.com:drim06/app_ror.git
+
+
+On va dans le repertoire de notre dossier cloné :
+$ cd app_ror
+
+
+On met à jour pour pouvoir lancer les tests et avoir accés aux utilisateurs ajoutés avec Faker:
+$ bundle exec rake db:reset
+$ bundle exec rake db:populate
+$ bundle exec rake test:prepare
+
+
+On lance le serveur :
+$ rails s
+
+
+Pour lancer tous les tests :
+$ bundle exec rspec spec
+
+
+Pour accéder au site on va dans notre navigateur et on tape : localhost:3000
+
+
+---------------------
+- Super Utilisateur -
+---------------------
+
+Se connecter sur le site avec ces identifiants permet d'être super-utilisateur, offre des possibilités supplémentaire, comme la suppression d'utilisateurs.. et donne accés à des données ajoutés grace à Faker, comme des utilisateurs, des scenes, des anecdotes... :
+Email : example@railstutorial.org
+Password : foobar
