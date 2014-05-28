@@ -31,9 +31,4 @@ describe Chapter do
     before { @chapter.anecdote = nil }
     it { should_not be_valid }
   end
-
-  describe "when title is too long" do
-    before { @chapter.titme = "a" * 51 }
-    it { should_not be_valid }
-  end
 end
